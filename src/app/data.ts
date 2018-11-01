@@ -43,7 +43,6 @@ export const places = [
         'type': 'Hotel',
     },
     {
-        'id': 1,
         'img': 'assets/images/hotel2.png',
         'address': 'street 2, house 2',
         'phone': 8932147,
@@ -62,7 +61,6 @@ export const places = [
         'type': 'Hotel',
     },
     {
-        'id': 2,
         'img': 'assets/images/tour1.png',
         'address': 'avenue 1, flat 1',
         'phone': 2654896,
@@ -81,7 +79,6 @@ export const places = [
         'type': 'Tours',
     },
     {
-        'id': 3,
         'img': 'assets/images/tour2.png',
         'address': 'avenue 2, flat 12',
         'phone': 7985632,
@@ -100,7 +97,6 @@ export const places = [
         'type': 'Tours',
     },
     {
-        'id': 4,
         'img': 'assets/images/fishing1.png',
         'address': 'main square 1, app 12',
         'phone': 7985632,
@@ -119,7 +115,6 @@ export const places = [
         'type': 'Fishing',
     },
     {
-        'id': 5,
         'img': 'assets/images/fishing2.png',
         'address': 'main square 5, app 13',
         'phone': 1256921,
