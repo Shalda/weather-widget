@@ -12,11 +12,11 @@
         <div class="activity_box">
             <div class="scrollbar" id="style-2">
                 <app-places #placeLink
-                        *ngFor="let place of places$ | async | placesFilter: filterType; first as f"
-                        [place]="place"
-                        [first]="f"
-                        (click)="selectPlace()"
-                        (firstPlaceEmitter)="firstPlaceData($event)">
+                            *ngFor="let place of places$ | async | placesFilter: filterType; first as f"
+                            [place]="place"
+                            [first]="f"
+                            (click)="selectPlace(place)"
+                            (firstPlaceEmitter)="firstPlaceData($event)">
                 </app-places>
             </div>
         </div>
