@@ -1,0 +1,24 @@
+<div class="element-left-bottom"> {{firstPlaceData|json}}
+    <div class="ele-strip">
+        <ul>
+            <li *ngFor=" let type of places$ | async | buildMenuFilter"
+                (click)="currentType(type)">
+                <a href="#">{{type}}</a></li>
+        </ul>
+    </div>
+    <div class="village">
+        <h3>Righteous indignation & like</h3>
+        <span class="line"> </span>
+        <div class="activity_box">
+            <div class="scrollbar" id="style-2">
+                <app-places #placeLink
+                        *ngFor="let place of places$ | async | placesFilter: filterType; first as f"
+                        [place]="place"
+                        [first]="f"
+                        (click)="selectPlace()"
+                        (firstPlaceEmitter)="firstPlaceData($event)">
+                </app-places>
+            </div>
+        </div>
+    </div>
+</div>
