@@ -1,28 +1,29 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
-import {IPlaces, places$} from '../data';
+import {IPlaces, places, places$} from '../data';
+import {first} from 'rxjs/operators';
+import {FirstPlaceService} from '../first-place.service';
 
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.css']
 })
-export class ListComponent {
-    @Input()
-    public first: boolean;
-    public places$: Observable<IPlaces[]> = places$;
+export class ListComponent implements OnInit {
+    public places$: Observable<IPlaces[]>;
     public filterType: string;
-    public firstPlaceInList;
-// первый item полученный из places, отправляем дальше в app component для связывания с weather social
-    @Output()
-    public firstPlaceDataEmitter: EventEmitter<IPlaces> = new EventEmitter();
-    public firstPlaceData(val: IPlaces): void {
-      this.firstPlaceDataEmitter.emit(val);
+    public constructor(
+        private _firstplace: FirstPlaceService
+    ) {
     }
+
     public selectPlace(place) {
-        this.firstPlaceDataEmitter.emit(place);
+        this._firstplace.chosenPlace = place;
     }
-    public currentType(val) {
+    public set currentType(val) {
         this.filterType = val;
+    }
+    ngOnInit() {
+        this.places$ = places$;
     }
 }

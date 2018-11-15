@@ -7,6 +7,8 @@ import { ListComponent } from './list/list.component';
 import { PlacesComponent } from './list/places/places.component';
 import { BuildMenuFilterPipe } from './list/build-menu-filter.pipe';
 import { PlacesFilterPipe } from './list/places-filter.pipe';
+import { InitDirective } from './list/init.directive';
+import {FirstPlaceService} from './first-place.service';
 
 
 @NgModule({
@@ -18,11 +20,14 @@ import { PlacesFilterPipe } from './list/places-filter.pipe';
     PlacesComponent,
     BuildMenuFilterPipe,
     PlacesFilterPipe,
+    InitDirective,
    ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+      FirstPlaceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

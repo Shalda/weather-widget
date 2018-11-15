@@ -1,5 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {IPlaces, ISocial, IWeather} from './data';
+import {FirstPlaceService} from './first-place.service';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -9,14 +11,5 @@ import {IPlaces, ISocial, IWeather} from './data';
 
 })
 export class AppComponent {
-    public title = 'Hot Weather Widget';
-    public weatherInfo: IWeather;
-    public socialInfo: ISocial;
-    @Input()
-    public first: boolean;
-
-    public setPlaceInfo(value: IPlaces): void {
-        this.weatherInfo = value.weather;
-        this.socialInfo = value.social_info;
-       }
+    public title = 'Weather Widget';
 }

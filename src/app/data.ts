@@ -22,6 +22,14 @@ export interface IPlaces {
     'social_info': ISocial;
     'type': string;
 }
+export interface IItem extends ISocial, IWeather {
+    title: string;
+    description: string;
+    type: string;
+    images: string[];
+    phone: number;
+}
+
 
 export const places = [
     {

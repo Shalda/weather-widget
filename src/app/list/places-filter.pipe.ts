@@ -10,9 +10,7 @@ export class PlacesFilterPipe implements PipeTransform {
         if (!type || type.toLowerCase() === 'all') {
             return places;
         }
-        return places.filter((place: IPlaces) => {
-        return place.type.includes(type);
-        });
+        return places.filter((place: IPlaces) => place.type === type);
     }
 
 }
